@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class JavaUserService {
 
   private final JavaUserRepository javaUserRepository;
 
-  public UserService(JavaUserRepository javaUserRepository) {
+  public JavaUserService(JavaUserRepository javaUserRepository) {
     this.javaUserRepository = javaUserRepository;
   }
 
