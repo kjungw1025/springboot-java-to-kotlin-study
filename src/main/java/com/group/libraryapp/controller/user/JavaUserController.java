@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-public class UserController {
+@Deprecated
+//@RestController
+public class JavaUserController {
 
   private final JavaUserService javaUserService;
 
-  public UserController(JavaUserService javaUserService) {
+  public JavaUserController(JavaUserService javaUserService) {
     this.javaUserService = javaUserService;
   }
 
