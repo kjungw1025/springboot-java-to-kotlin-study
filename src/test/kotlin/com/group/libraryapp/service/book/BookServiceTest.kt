@@ -19,12 +19,12 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class BookServiceTest @Autowired constructor(
-        // Kotlin에서는 Trailing commas가 적용되어 가장 마지막 줄에 콤마(,)를 작성해도된다. (자바는 에러 발생함)
-        // git diff가 깔끔해짐 -> 새로운 항목을 추가하거나 삭제할 때 '변경된 줄'만 diff에 나타낼 수 있음
-        private val bookService: BookService,
-        private val bookRepository: BookRepository,
-        private val userRepository: UserRepository,
-        private val userLoanHistoryRepository: UserLoanHistoryRepository
+    // Kotlin에서는 Trailing commas가 적용되어 가장 마지막 줄에 콤마(,)를 작성해도된다. (자바는 에러 발생함)
+    // git diff가 깔끔해짐 -> 새로운 항목을 추가하거나 삭제할 때 '변경된 줄'만 diff에 나타낼 수 있음
+    private val bookService: BookService,
+    private val bookRepository: BookRepository,
+    private val userRepository: UserRepository,
+    private val userLoanHistoryRepository: UserLoanHistoryRepository
 ) {
 
     @AfterEach
