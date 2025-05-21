@@ -3,7 +3,8 @@ package com.group.libraryapp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@Deprecated
+//@SpringBootApplication
 public class JavaLibraryAppApplication {
 
   public static void main(String[] args) {
