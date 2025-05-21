@@ -1,6 +1,6 @@
 package com.group.libraryapp.service.user;
 
-import com.group.libraryapp.domain.user.User;
+import com.group.libraryapp.domain.user.JavaUser;
 import com.group.libraryapp.domain.user.JavaUserRepository;
 import com.group.libraryapp.dto.user.request.JavaUserCreateRequest;
 import com.group.libraryapp.dto.user.request.JavaUserUpdateRequest;
@@ -23,7 +23,7 @@ public class JavaUserService {
 
   @Transactional
   public void saveUser(JavaUserCreateRequest request) {
-    User newUser = new User(request.getName(), request.getAge(), Collections.emptyList(), null);
+    JavaUser newUser = new JavaUser(request.getName(), request.getAge());
     javaUserRepository.save(newUser);
   }
 
@@ -36,13 +36,13 @@ public class JavaUserService {
 
   @Transactional
   public void updateUserName(JavaUserUpdateRequest request) {
-    User user = javaUserRepository.findById(request.getId()).orElseThrow(IllegalArgumentException::new);
+    JavaUser user = javaUserRepository.findById(request.getId()).orElseThrow(IllegalArgumentException::new);
     user.updateName(request.getName());
   }
 
   @Transactional
   public void deleteUser(String name) {
-    User user = javaUserRepository.findByName(name).orElseThrow(IllegalArgumentException::new);
+    JavaUser user = javaUserRepository.findByName(name).orElseThrow(IllegalArgumentException::new);
     javaUserRepository.delete(user);
   }
 

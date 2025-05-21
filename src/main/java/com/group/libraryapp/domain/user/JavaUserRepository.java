@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface JavaUserRepository extends JpaRepository<User, Long> {
+public interface JavaUserRepository extends JpaRepository<JavaUser, Long> {
 
-  Optional<User> findByName(String name);
+  Optional<JavaUser> findByName(String name);
 
 }
