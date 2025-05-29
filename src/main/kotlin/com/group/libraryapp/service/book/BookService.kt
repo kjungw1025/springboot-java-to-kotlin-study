@@ -1,6 +1,7 @@
 package com.group.libraryapp.service.book
 
 import com.group.libraryapp.domain.book.Book
+import com.group.libraryapp.domain.book.BookQueryDslRepository
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class BookService(
     private val bookRepository: BookRepository,
+    private val bookQueryDslRepository: BookQueryDslRepository,
     private val userRepository: UserRepository,
     private val userLoanHistoryRepository: UserLoanHistoryRepository,
 ) {
@@ -50,7 +52,7 @@ class BookService(
 
     @Transactional(readOnly = true)
     fun getBookStatistics(): List<BookStatResponse> {
-        return bookRepository.getStatus()
+        return bookQueryDslRepository.getStatus()
 //        return bookRepository.findAll() // List<Book>
 //            .groupBy { book -> book.type } // Map<BookType, List<Book>>
 //            .map { (type, books) -> BookStatResponse(type, books.size) } // List<BookStatResponse>
